@@ -9,29 +9,10 @@ Console.Write("Введите третье число: ");
 double num3 = Convert.ToDouble(Console.ReadLine());
 double max = num1;
 if (num1 == num2 && num1 == num3) Console.WriteLine("Введенные числа равны между собой");
-else if (num1 == num2)
-{
-    if (max < num3)
-    {
-        max = num3; Console.WriteLine($"Из чисел {num1} {num2} {num3} максимальное число {max}");
-    }
-    else Console.WriteLine($"Из чисел {num1} {num2} {num3} максимальное число {max}");
-}
-else if (num1 == num3)
-{
-    if (max < num2)
-    {
-        max = num2; Console.WriteLine($"Из чисел {num1} {num2} {num3} максимальное число {max}");
-    }
-    else Console.WriteLine($"Из чисел {num1} {num2} {num3} максимальное число {max}");
-}
-else if (max > num2 && max > num3) Console.WriteLine($"Из чисел {num1} {num2} {num3} максимальное число {max}");
-else if (num2 > max && num2 > num3)
-{
-    max = num2; Console.WriteLine($"Из чисел {num1} {num2} {num3} максимальное число {max}");
-}
 else
 {
-    max = num3; Console.WriteLine($"Из чисел {num1} {num2} {num3} максимальное число {max}");
-}
+    if (max <= num2) max = num2;
+    if (max <= num3) max = num3;
 
+    Console.WriteLine($"Из чисел {num1} {num2} {num3} максимальное число {max}");
+}
