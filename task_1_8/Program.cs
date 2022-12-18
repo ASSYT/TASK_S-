@@ -6,9 +6,10 @@ int N = Convert.ToInt32(Console.ReadLine());
 // I вариант 
 // for (int i = 2; i <= N; i = i + 2) Console.Write(" " + i);
 // II вариант
+Console.Write($"{N}-->");
 int i = 2;
-while (i <= N) 
+while (i <= N)
 {
-Console.Write(" " + i); 
-i = i + 2;
+    Console.Write(" " + i); i = i + 2;
+    if (i <= N) Console.Write(",");
 }
