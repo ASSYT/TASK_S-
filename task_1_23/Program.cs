@@ -17,12 +17,12 @@ void Cube(int n1)
         counter++;
     }
 }
-System.Console.Write($"Введите натуральное число: ");
+Console.Write($"Введите натуральное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
 while (number < 1)
 {
-    System.Console.Write("Введите положительное число:");
+    Console.Write("Введите положительное число:");
     number = Convert.ToInt32(Console.ReadLine());
 }
 Console.WriteLine($"{number} ->");
