@@ -5,7 +5,7 @@
 
 Console.Write("Введите любое неоднозначное целое число: ");
 int number = Convert.ToInt32(Console.ReadLine());
-while (number < 10)
+while (number < 10 && number > -10)
 {
     Console.Write("Неверный ввод числа. Повторите ввод любого неоднозначное число: ");
     number = Convert.ToInt32(Console.ReadLine());
@@ -15,16 +15,17 @@ int Сhangeling(int num1)
     int changeling = 0;
     while (num1 > 0)
     {
-        changeling = changeling*10+num1%10;
+        changeling = changeling * 10 + num1 % 10;
         num1 = num1 / 10;
     }
     return changeling;
 }
-int newNumber = Сhangeling(number);
-string resalt = newNumber == number
+int num = number < 0 ? num = -number : num = number;
+int newNumber = Сhangeling(num);
+string result = newNumber == num
         ? $"Введенное число: {number} является палиндромом"
         : $"Введенное число: {number} не является палиндромом";
-Console.WriteLine(resalt);
+Console.WriteLine(result);
 
 
 
