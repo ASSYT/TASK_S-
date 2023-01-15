@@ -11,21 +11,13 @@ int UserInput(string text)// метод пользовательского вв�
 }
 int userNumberA = UserInput("введите числа А = ");
 int userNumberB = UserInput("введите числа B = ");
-int degreeNumber = userNumberA;
-if (userNumberA == 0) degreeNumber = 0;
-if (userNumberB == 0) degreeNumber = 1;
-else
+double degreeNumber = userNumberB > 0 
+    ? DegreeNumber(userNumberA, userNumberB) 
+    : 1/DegreeNumber(userNumberA, -userNumberB);
+Console.Write($"{userNumberA}, {userNumberB} -> {degreeNumber}");   
+double DegreeNumber(int a1, int b1) // возведение a1 в степень b1
 {
-    if (userNumberB > 0) degreeNumber = DegreeNumber(userNumberA, userNumberB);
-    else
-    {
-        degreeNumber = DegreeNumber(userNumberA, -userNumberB);
-    }
-}
-Console.Write($"{userNumberA}, {userNumberB} -> {degreeNumber}");
-int DegreeNumber(int a1, int b1) // возведение a1 в степень b1
-{
-    int degree = a1;
-    for (int col = 2; col <= b1; degree *= a1, col++) ;
+    double degree =1;
+    for (int col = 1; col <= b1; degree *= a1, col++) ;
     return degree;
 }
