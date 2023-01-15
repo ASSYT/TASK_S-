@@ -3,7 +3,7 @@
 // возводит число A в натуральную степень B.
 // 3, 5 -> 243 (3⁵)
 // 2, 4 -> 16
-int UserInput(string text) // метод пользовательского ввода
+int UserInput(string text)// метод пользовательского ввода
 {
     Console.Write(text);
     int result = Convert.ToInt32(Console.ReadLine());
@@ -11,20 +11,21 @@ int UserInput(string text) // метод пользовательского вв
 }
 int userNumberA = UserInput("введите числа А = ");
 int userNumberB = UserInput("введите числа B = ");
-// проверка на натуральность числа В
-while (userNumberB <= 0)
-{
-    userNumberB = UserInput("введите натуральное числа B = ");
-}
 int degreeNumber = userNumberA;
 if (userNumberA == 0) degreeNumber = 0;
+if (userNumberB == 0) degreeNumber = 1;
 else
 {
-    int index = 2;
-    while (index <= userNumberB) // возведение А в степень В 
+    if (userNumberB > 0) degreeNumber = DegreeNumber(userNumberA, userNumberB);
+    else
     {
-        degreeNumber *= userNumberA;
-        index++;
+        degreeNumber = DegreeNumber(userNumberA, -userNumberB);
     }
 }
 Console.Write($"{userNumberA}, {userNumberB} -> {degreeNumber}");
+int DegreeNumber(int a1, int b1) // возведение a1 в степень b1
+{
+    int degree = a1;
+    for (int col = 2; col <= b1; degree *= a1, col++) ;
+    return degree;
+}
