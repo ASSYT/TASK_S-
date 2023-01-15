@@ -19,6 +19,7 @@ void PrintArray(int[] arr)
         Console.Write($"{arr[i]},");
     }
     Console.Write($"{arr[arr.Length-1]} -> ");
+    
 }
 void PrintArray1(int[] arr)
 {
@@ -31,5 +32,4 @@ void PrintArray1(int[] arr)
 }
 int[] arr = CreateArray(8);
 PrintArray(arr);
-// Console.WrateLine ($"[{PrintArray(arr)}]");
 PrintArray1(arr);
