@@ -14,22 +14,15 @@ int[] CreateArray(int size)
 }
 void PrintArray(int[] arr)
 {
-    for (int i = 0; i < arr.Length-1; i++)
+    string result = "";
+    for (int i = 0; i < arr.Length - 1; i++)
     {
-        Console.Write($"{arr[i]},");
+        result += arr[i] + ", ";
     }
-    Console.Write($"{arr[arr.Length-1]} -> ");
-    
-}
-void PrintArray1(int[] arr)
-{
-    Console.Write("[");
-    for (int i = 0; i < arr.Length-1; i++)
-    {
-        Console.Write($"{arr[i]},");
-    }
-    Console.WriteLine($"{arr[arr.Length-1]}]");
+    result += arr[arr.Length - 1];
+    Console.Write(result);
+    Console.Write(" -> ");
+    Console.Write($"[{result}]");
 }
 int[] arr = CreateArray(8);
 PrintArray(arr);
-PrintArray1(arr);
