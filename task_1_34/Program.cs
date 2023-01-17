@@ -35,6 +35,11 @@ int NumberEven(int[] array) // счетчик при выполнении усл
 }
 Console.Write("Задайте длину массива: ");
 int z = Convert.ToInt32(Console.ReadLine());
+while (z<=0)
+{
+    Console.Write("Повторите ввод (не ноль и не отрицательное число): ");
+    z = Convert.ToInt32(Console.ReadLine());
+}
 int[] arr = CreateArrayRndThree(z, 100, 999);
 PrintArray(arr);
 Console.WriteLine("");
