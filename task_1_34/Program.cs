@@ -22,7 +22,7 @@ void PrintArray(int[] array) // выводим массив в консоль
         if (i < array.Length - 1) Console.Write(array[i] + ",");
         else Console.Write(array[i]);
     }
-    Console.Write("]");
+    Console.WriteLine("]");
 }
 int NumberEven(int[] array) // счетчик при выполнении условия
 {
@@ -42,7 +42,7 @@ while (z<=0)
 }
 int[] arr = CreateArrayRndThree(z, 100, 999);
 PrintArray(arr);
-Console.WriteLine("");
+
 int number = NumberEven(arr);
 if (number==0) Console.WriteLine("В массиве четных элементов нет");
 else Console.WriteLine($"В массиве четных элементов: {number}");
