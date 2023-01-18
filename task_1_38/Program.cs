@@ -16,8 +16,8 @@ void PrintArrayDouble(double[] array) // выводит массив в конс
     Console.Write("[");
     for (int i = 0; i < array.Length; i++)
     {
-        if (i < array.Length - 1) Console.Write(array[i] + ",");
-        else Console.Write(array[i]);
+        if (i < array.Length - 1) Console.Write(Math.Round(array[i],1,MidpointRounding.ToZero) + "; ");
+        else Console.Write(Math.Round(array[i],1,MidpointRounding.ToZero));
     }
     Console.WriteLine("]");
 }
@@ -39,12 +39,12 @@ double MinNum(double[] array) // поиск минимального элеме�
     }
     return min;
 }
-int size = 5, min = -5, max = 10; // наши данные
+int size = 6, min = -5, max = 10; // наши данные
 double[] arr = CreateArrayRndDouble(size, min, max);
 PrintArrayDouble(arr);
 
 double max1 = MaxNum(arr);
 double min1 = MinNum(arr);
 
-Console.WriteLine($"Максимальное значение элемента в массиве = {max1}");
-Console.WriteLine($"Минимальное значение элемента в массиве = {min1}");
+Console.WriteLine($"Максимальный элемент в массиве = {Math.Round(max1,1,MidpointRounding.ToZero)}");
+Console.WriteLine($"Минимальный элемент в массиве = {Math.Round(min1,1,MidpointRounding.ToZero)}");
