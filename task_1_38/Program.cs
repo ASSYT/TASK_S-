@@ -13,14 +13,7 @@ double[] CreateArrayRndDouble(int size, int min, int max) // создание р
 }
 void PrintArrayDouble(double[] array) // выводит массив в консоль  
 {
-    Console.Write("[");
-    for (int i = 0; i < array.Length; i++)
-    {
-        if (i < array.Length - 1) Console.Write(array[i] + "; ");
-        else Console.Write(array[i]);
-
-    }
-    Console.Write("]");
+    Console.Write($"[{string.Join("; ", array)}]");
 }
 double MaxNum(double[] array) // поиск максимального элемента в массиве
 {
