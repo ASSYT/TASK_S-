@@ -7,7 +7,7 @@ double[] CreateArrayRndDouble(int size, int min, int max) // создание р
     Random rnd = new Random();
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = rnd.NextDouble() * (max - min) + min;
+        array[i] = Math.Round(rnd.NextDouble() * (max - min) + min, 1, MidpointRounding.ToZero);
     }
     return array;
 }
@@ -16,10 +16,11 @@ void PrintArrayDouble(double[] array) // выводит массив в конс
     Console.Write("[");
     for (int i = 0; i < array.Length; i++)
     {
-        if (i < array.Length - 1) Console.Write(Math.Round(array[i],1,MidpointRounding.ToZero) + "; ");
-        else Console.Write(Math.Round(array[i],1,MidpointRounding.ToZero));
+        if (i < array.Length - 1) Console.Write(array[i] + "; ");
+        else Console.Write(array[i]);
+
     }
-    Console.WriteLine("]");
+    Console.Write("]");
 }
 double MaxNum(double[] array) // поиск максимального элемента в массиве
 {
@@ -46,5 +47,7 @@ PrintArrayDouble(arr);
 double max1 = MaxNum(arr);
 double min1 = MinNum(arr);
 
-Console.WriteLine($"Максимальный элемент в массиве = {Math.Round(max1,1,MidpointRounding.ToZero)}");
-Console.WriteLine($"Минимальный элемент в массиве = {Math.Round(min1,1,MidpointRounding.ToZero)}");
+Console.WriteLine($" -> {Math.Round(max1 - min1, 1, MidpointRounding.ToZero)}");
+
+// Console.Write($"{max1}");
+// Console.WriteLine($"-{min1}");
