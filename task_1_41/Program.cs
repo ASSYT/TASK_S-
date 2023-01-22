@@ -3,26 +3,16 @@
 // Посчитайте, сколько чисел больше 0 ввёл пользователь.
 // 0, 7, 8, -2, -2 -> 2
 // -1, -7, 567, 89, 223-> 3
-double[] EnterArrayDouble(int size) // ввод массива
+int[] ArrayInt(string[] strArr) // перевод строкового массива в массив чисел
 {
-    double[] array = new double[size];
-    // Random rnd = new Random();
-    for (int i = 0; i < array.Length; i++)
+    int[] arrayInt = new int[strArr.Length];
+    for (int i = 0; i < strArr.Length; i++)
     {
-        Console.Write($"Введите {i + 1} число = ");
-        array[i] = Convert.ToInt32(Console.ReadLine());
+        arrayInt[i] = Convert.ToInt32(strArr[i]);
     }
-    return array;
+    return arrayInt;
 }
-void PrintArrayDouble(double[] array) // выводит массив в консоль  
-{
-    for (int i = 0; i < array.Length; i++)
-    {
-        if (i < array.Length - 1) Console.Write(array[i] + "; ");
-        else Console.Write(array[i]);
-    }
-}
-int NumberPositive(double[] array) // счетчик по условию
+int NumberPositive(int[] array) // счетчик по условию
 {
     int numberPositive = 0;
     for (int i = 0; i < array.Length; i++)
@@ -32,12 +22,21 @@ int NumberPositive(double[] array) // счетчик по условию
     return numberPositive;
 }
 
-Console.Write("Введите количесво вводимых чисел М = ");
-int raz = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите количество вводимых чисел М = ");
+int num = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"Введите {num} чисел через запятую ");
 
-double[] arr = EnterArrayDouble(raz); // заполняем массив 
-int number = NumberPositive(arr);    // счётчик положительных чисел
-
-PrintArrayDouble(arr); // выводим в консоль заполненный массив
-Console.WriteLine($" -> {number}"); // выводим в консоль кол-во пол. чисел из массива
-
+string str = Console.ReadLine(); 
+string[] strArray = str.Split(','); 
+// int[] arrInt = str.Split(',') // преобразуем строк массив в массив с М строк.эл-ми
+//     .Select(x => Convert.ToInt32(x))
+//     .ToArray(); 
+while (strArray.Length != num) // проверка кол-ва введенных чисел
+{
+    Console.Write($"Количество введенных чисел не совпадает с М = {num}. Повторите ввод {num} чисел через запятую ");
+    str = Console.ReadLine(); // массиву str присваиваем введенную строку 
+    strArray = str.Split(','); // преобразуем строк массив в массив с М строк.эл-ми
+}
+int[] arrInt = ArrayInt(strArray); // перевод строкового массива в чисельный
+int numberPositive = NumberPositive(arrInt);    // счётчик положительных чисел
+Console.WriteLine(str + $" -> {numberPositive}"); // выводим в консоль кол-во пол.чисел
