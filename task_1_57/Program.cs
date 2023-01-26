@@ -87,3 +87,4 @@ Console.WriteLine(string.Empty);
 PrintArray(array1D);
 Console.WriteLine(string.Empty);
 CountDictionary(array1D);
+// https://github.com/MrAlexPavlov/cSharp_seminar_1/blob/main/task57/Program.cs
