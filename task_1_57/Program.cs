@@ -2,10 +2,6 @@
 // двумерного массива. Частотный словарь содержит
 // информацию о том, сколько раз встречается элемент
 // входных данных.
-// Задача 57: Составить частотный словарь элементов
-// двумерного массива. Частотный словарь содержит
-// информацию о том, сколько раз встречается элемент
-// входных данных.
 
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
@@ -37,7 +33,7 @@ void PrintMatrix(int[,] matrix)
 
 int[] CreateArrayFromMatrix(int[,] matr)
 {
- int[] arr = new int[matr.GetLength(0) * matr.GetLength(1)];
+ int[] arr = new int[matr.Length];
  int count = 0;
  for (int i = 0; i < matr.GetLength(0); i++)
  {
