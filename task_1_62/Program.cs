@@ -13,7 +13,7 @@ int i = 0;
 int j = 0;
 int maxElem = raz*raz+elem-1;
 
-while (elem <= maxElem) //  ПОДСМОТРЕЛА В ИНТЕРНЕТЕ       
+while (elem <= maxElem) //  ПОДСМОТРЕЛА В ИНТЕРНЕТЕ  разобралась     
 {
     nums[i, j] = elem;
     if (i <= j + 1 && i + j < raz- 1) ++j;
@@ -45,7 +45,7 @@ int ferstElem = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите размер массива: ");
 int raz1 = Convert.ToInt32(Console.ReadLine());
 
-int [,] spiralMatrix = SpiralMatrix(raz1, ferstElem);
+int [,] spiralMatrix = SpiralMatrix(raz1, ferstElem); 
 
 Console.WriteLine("");
 PrintMatrix(spiralMatrix);
