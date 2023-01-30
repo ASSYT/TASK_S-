@@ -33,32 +33,32 @@ IntegerNumbers(nUser, mUser);
 
 
 // 2
-int InsertDigit(string text) //Метод пользовательского ввода для целых чисел
-{
-    int result; bool parse;
-    Console.WriteLine(text);
-    parse = Int32.TryParse(Console.ReadLine(), out result);
-    if (!parse) result = InsertDigit(text);//Если пользователь ввел некорректное значение вызываем повтороно метод.
-    return result;
-}
+// int InsertDigit(string text) //Метод пользовательского ввода для целых чисел
+// {
+//     int result; bool parse;
+//     Console.WriteLine(text);
+//     parse = Int32.TryParse(Console.ReadLine(), out result);
+//     if (!parse) result = InsertDigit(text);//Если пользователь ввел некорректное значение вызываем повтороно метод.
+//     return result;
+// }
 
 
-void IntegerNumbers(int n, int m, int s)
-{
-    if (n == m)
-    {
-        Console.Write($"{n} ");
-        return;
-    }
-    IntegerNumbers(n + s, m, s);
+// void IntegerNumbers(int n, int m, int s)
+// {
+//     if (n == m)
+//     {
+//         Console.Write($"{n} ");
+//         return;
+//     }
+//     IntegerNumbers(n + s, m, s);
 
-    Console.Write($"{n} ");
-}
+//     Console.Write($"{n} ");
+// }
 
-int mUser = InsertDigit("Введите число N:");
-int nUser = InsertDigit("Введите число M:");
+// int mUser = InsertDigit("Введите число N:");
+// int nUser = InsertDigit("Введите число M:");
 
-int sign=Math.Sign((mUser-nUser));
-Console.WriteLine($"sign = {sign}");
+// int sign=Math.Sign((mUser-nUser));
+// Console.WriteLine($"sign = {sign}");
 
-IntegerNumbers(nUser, mUser, sign);
+// IntegerNumbers(nUser, mUser, sign);
