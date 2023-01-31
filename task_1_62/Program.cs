@@ -13,7 +13,7 @@ int i = 0;
 int j = 0;
 int maxElem = raz*raz+elem-1;
 
-while (elem <= maxElem) //  ПОДСМОТРЕЛА В ИНТЕРНЕТЕ  разобралась     
+while (elem <= maxElem) 
 {
     nums[i, j] = elem;
     if (i <= j + 1 && i + j < raz- 1) ++j;
