@@ -24,10 +24,6 @@ int FunctionAckerman(int m, int n)
     }
     return n + 1;
 }
-// if (n == 0) return m + 1;
-// if (m == 0) return AckermanFunction(n - 1, 1);
-// return AckermanFunction(n - 1, AckermanFunction(n, m - 1));
-// }
 
 int mUser = InsertDigit("Введите число m: ");
 int nUser = InsertDigit("Введите число n: ");
